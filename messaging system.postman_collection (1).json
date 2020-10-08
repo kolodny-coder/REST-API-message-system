@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "68c046a5-4d64-4920-9360-3f493c133dcc",
+		"name": "messaging system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post request 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sender\": \"Spiderman\",\n    \"receiver\": \"Superman\",\n    \"subject\": \"Long time no seen\",\n    \"body\": \"Time waits for no man. Unless that man is Chuck Norris.\"\n\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://msg-system.herokuapp.com/message",
+					"protocol": "https",
+					"host": [
+						"msg-system",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message"
+					]
+				},
+				"description": "adding new message"
+			},
+			"response": []
+		},
+		{
+			"name": "Post request 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sender\": \"Tom\",\n    \"receiver\": \"Jery\",\n    \"subject\": \"dont let the cat watch over the milk ..\",\n    \"body\": \"If you spell Chuck Norris in Scrabble, you win. Forever.\"\n\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://msg-system.herokuapp.com/message",
+					"protocol": "https",
+					"host": [
+						"msg-system",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message"
+					]
+				},
+				"description": "adding anoyjer message"
+			},
+			"response": []
+		},
+		{
+			"name": "Post request 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sender\": \"Tom\",\n    \"receiver\": \"MacGyver\",\n    \"subject\": \"dont let the cat watch over the milk ..\",\n    \"body\": \"When God said, Let there be light! Chuck said, Say Please.\"\n\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://msg-system.herokuapp.com/message",
+					"protocol": "https",
+					"host": [
+						"msg-system",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message"
+					]
+				},
+				"description": "add third message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get  \"Tom\" unread messages ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sender\": \"Tom\",\n    \"receiver\": \"MacGyver\",\n    \"subject\": \"dont let the cat watch over the milk ..\",\n    \"body\": \"When God said, Let there be light! Chuck said, Say Please.\"\n\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://msg-system.herokuapp.com/message/Tom/unread",
+					"protocol": "https",
+					"host": [
+						"msg-system",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"Tom",
+						"unread"
+					]
+				},
+				"description": "get request for non read messages of tom.\nNote that the next request this messages will mark has read and we expexting empty array"
+			},
+			"response": []
+		},
+		{
+			"name": "Get  \"Tom\" unread messages empty array ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sender\": \"Tom\",\n    \"receiver\": \"MacGyver\",\n    \"subject\": \"dont let the cat watch over the milk ..\",\n    \"body\": \"When God said, Let there be light! Chuck said, Say Please.\"\n\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://msg-system.herokuapp.com/message/Tom/unread",
+					"protocol": "https",
+					"host": [
+						"msg-system",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"Tom",
+						"unread"
+					]
+				},
+				"description": "the previous GET request change the messages status to read that why we got empty array \"no unread messages from user Tom\""
+			},
+			"response": []
+		},
+		{
+			"name": "Get  \"Tom\" all messages ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sender\": \"Tom\",\n    \"receiver\": \"MacGyver\",\n    \"subject\": \"dont let the cat watch over the milk ..\",\n    \"body\": \"When God said, Let there be light! Chuck said, Say Please.\"\n\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://msg-system.herokuapp.com/message/Tom/all",
+					"protocol": "https",
+					"host": [
+						"msg-system",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"Tom",
+						"all"
+					]
+				},
+				"description": "getting all the messages from sender Tom"
+			},
+			"response": []
+		},
+		{
+			"name": "Get specific message",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://msg-system.herokuapp.com/message/14",
+					"protocol": "https",
+					"host": [
+						"msg-system",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"14"
+					]
+				},
+				"description": "get messsage no 14"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE message no 13",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://msg-system.herokuapp.com/message/13",
+					"protocol": "https",
+					"host": [
+						"msg-system",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"13"
+					]
+				},
+				"description": "delete message no 13"
+			},
+			"response": []
+		},
+		{
+			"name": "GET message no 13 after deleting",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "https://msg-system.herokuapp.com/message/13",
+					"protocol": "https",
+					"host": [
+						"msg-system",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"13"
+					]
+				},
+				"description": "getting empty array becaus message no 13 was deleted"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
