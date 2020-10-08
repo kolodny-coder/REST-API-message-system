@@ -15,11 +15,11 @@ User can access the app from any browser or an API tool
 
 # Hosting
 
-The app hosted at https://my-app-dan.herokuapp.com/
+The app hosted at https://msg-system.herokuapp.com/
 
 # Using the app:
 
-writing a message - use POST method on this endpoint: https://my-app-dan.herokuapp.com/message
+writing a message - use POST method on this endpoint: https://msg-system.herokuapp.com/message
 
 user should declare in the header 
 Content-Type: application/json
@@ -35,14 +35,14 @@ user must provide 4 parameters in the body (sender, receiver, subject, body) in 
 
 }
 ```
-Get all messages or all unread messages from a specific user -  use GET method on this endpoint: https://my-app-dan.herokuapp.com/message/<sender>/<all/unread>
+Get all messages or all unread messages from a specific user -  use GET method on this endpoint: https://msg-system.herokuapp.com/message/<sender>/<all/unread>
   
 The user should declare in the second parameter if he would like to get "unread" messages from a specific sender or "all"  the messages of that specific user.
   
-Read a specific message -  use GET method on this endpoint: https://my-app-dan.herokuapp.com/message/<id>
+Read a specific message -  use GET method on this endpoint: https://msg-system.herokuapp.com/message/<id>
 The user should declare the message-id number he would like to read.
   
- Delete message - use DELETE method on this endpoint: https://my-app-dan.herokuapp.com/message/<id>
+ Delete message - use DELETE method on this endpoint: https://msg-system.herokuapp.com/message/<id>
 The user should declare the message-id he wishes to delete.
   
 # Message Content
